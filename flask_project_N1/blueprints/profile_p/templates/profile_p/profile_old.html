@@ -1,0 +1,167 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block navbar %}
+<header>
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+		<div class="container-fluid">
+            <a href="/main/" class="navbar-brand">
+                <!-- ссылка на логотип -->
+				какой то логотип
+                <img id="img_n" src="" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+			aria-expanded="false">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav mr-auto mb-2">
+					<li class="nav-item">
+						<a href="" class="nav-link">Сводка</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Товары</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Избранное</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Ozon</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Wildberries</a>
+					</li>
+				</ul>
+				<form action="" class="d-flex">
+					<input type="search" placeholder="Поиск" class="form-control mr-2">
+					<a href="/profile/" class="btn btn-outline-warning ml-3" role="bottun">Профиль</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5" style="margin-right: 0">
+    <div class="pb-5 mb-4"></div>
+    <div class="row gutters">
+    	<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+    		<div class="card h-100">
+    			<div class="card-body">
+                    <form method="post">
+    				    <div class="row gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    				    		<div class="form-group">
+			            		{% for cat, msg in get_flashed_messages(True) %}
+			            		<div class="alert {{ cat }}" role="alert">
+			            			{{ msg }}
+			            		</div>
+			            		{% endfor %}
+			            	</div>
+    				    	</div>
+    				    	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    				    		<h6 class="mb-3 text-primary">Ваши персональные данные</h6>
+    				    	</div>
+							{% if user[0]['first_name'] %}
+    				    	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="first_name">Ваше имя</label>
+    				    			<input name="first_name" type="text" class="form-control" id="first_name" placeholder="Введите имя"
+										   value="{{ user[0]['first_name'] }}" maxlength="20">
+    				    		</div>
+    				    	</div>
+							{% else %}
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="first_name">Ваше имя</label>
+    				    			<input name="first_name" type="text" class="form-control" id="first_name" placeholder="Введите имя"
+									       maxlength="20">
+    				    		</div>
+    				    	</div>
+							{% endif %}
+							{% if user[0]['last_name'] %}
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="last_name">Ваша Фамилия</label>
+    				    			<input name="last_name" type="text" class="form-control" id="last_name" placeholder="Введите Фамилию"
+										   value="{{ user[0]['last_name'] }}" maxlength="25">
+    				    		</div>
+    				    	</div>
+							{% else %}
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="last_name">Ваша Фамилия</label>
+    				    			<input name="last_name" type="text" class="form-control" id="last_name" placeholder="Введите Фамилию"
+										   maxlength="25">
+    				    		</div>
+    				    	</div>
+							{% endif %}
+    				    	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="eMail">Почта</label>
+    				    			<input name="email" type="email" class="form-control" id="eMail" placeholder="Введите почту"
+										   value="{{ user[0]['email'] }}" maxlength="100" required>
+    				    		</div>
+    				    	</div>
+    				    	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="phone">Номер</label>
+    				    			<input name="phone" type="text" class="form-control" id="phone" placeholder="Введите ваш номер"
+										   value="{{ user[0]['phone'] }}" maxlength="15" required>
+    				    		</div>
+    				    	</div>
+    				    </div>
+                        <div class="row gutters">
+    				    	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    				    		<div class="text-right">
+                                    <input type="submit" id="cancel_1" name="cancel_1" class="btn btn-secondary" value="Отмена">
+                                    <input type="submit" id="submit_1" name="submit_1" class="btn btn-primary" value="Обновить">
+    				    		</div>
+    				    	</div>
+    				    </div>
+    				    <div class="row gutters">
+    				    	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    				    		<h6 class="mb-3 text-primary">Введите старые данные, чтобы перейти к их замене</h6>
+    				    	</div>
+    				    	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="row gutters">
+                                    <div class="col-6">
+                                        <div class="form-group">
+    				    		        	<label for="login">Логин</label>
+    				    		        	<input type="text" name="login" class="form-control" id="login" placeholder="Введите логин"
+												   value="{{ user[0]['login'] }}" maxlength="60" required>
+    				    		        </div>
+                                    </div>
+                                </div>
+    				    	</div>
+    				    	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="password1">Пароль</label>
+    				    			<input type="password" name="password1" class="form-control" id="password1" placeholder="Введите пароль">
+									<small class="form-text text-muted">Cтарый пароль</small>
+    				    		</div>
+    				    	</div>
+    				    	<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    				    		<div class="form-group">
+    				    			<label for="password2">Повторите пароль</label>
+    				    			<input type="password" name="password2" class="form-control" id="password2" placeholder="Введите пароль повторно">
+    				    		</div>
+    				    	</div>
+    				    </div>
+    				    <div class="row gutters">
+    				    	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    				    		<div class="text-right">
+									<a href="{{ url_for('.remember', user_id=session.get('log')['user_id']) }}">Забыли пароль?</a>
+    				    			<input type="submit" id="cancel_2" name="cancel_2" class="btn btn-secondary" value="Отмена">
+    				    			<input type="submit" id="submit_2" name="submit_2" class="btn btn-primary" value="Обновить">
+    				    		</div>
+    				    	</div>
+    				    </div>
+                    </form>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>
+{% endblock %}

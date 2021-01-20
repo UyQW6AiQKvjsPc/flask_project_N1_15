@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>{{ title }}</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="/static/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Montserrat:100,200,300,400,500,600,700,800,900"]},
+			custom: {"families":["Flaticon", "LineAwesome"], urls: ['/static/css/fonts.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/css/ready.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="/static/css/demo.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header">
+				<!--
+					Tip 1: You can change the background color of the logo header using: data-background-color="black | dark | blue | purple | light-blue | green | orange | red"
+				-->
+				<a href="#" class="big-logo">
+					<img src="/static/img/logoresponsive.png" alt="logo img" class="logo-img">
+				</a>
+				<a href="#" class="logo">
+					<img src="/static/img/logoheader.png" alt="navbar brand" class="navbar-brand">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="la la-bars"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<!-- End Logo Header -->
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue">
+				<!--
+					Tip 1: You can change the background color of the navbar header using: data-background-color="black | dark | blue | purple | light-blue | green | orange | red"
+				-->
+				<div class="container-fluid">
+					<div class="navbar-minimize">
+						<button class="btn btn-minimize btn-rounded">
+							<i class="la la-navicon"></i>
+						</button>
+					</div>
+					<div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search ml-md-3 mr-md-3">
+							<div class="input-group">
+								<input type="text" placeholder="Поиск ..." class="form-control">
+								<div class="input-group-append">
+									<button type="submit" class="btn btn-search">
+										<i class="la la-search search-icon"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="flaticon-search-1"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="flaticon-envelope-1"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Написать в поддержку</a>
+								<a class="dropdown-item" href="#">Написать авторам проекта</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Найти ответы (FAQ)</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="flaticon-alarm"></i>
+								<!-- <span class="notification">0</span> -->
+							</a>
+							<ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+								<li>
+									<div class="dropdown-title">У вас 0 новых уведомлений</div>
+								</li>
+								<!-- <li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Робот обновил данные парсинга WB
+												</span>
+												<span class="time">5 минут назад</span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Появились новые товары в разделе "Ноутбуки"
+												</span>
+												<span class="time">12 минут назад</span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img">
+												<img src="/static/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Вам ответела техподдержка
+												</span>
+												<span class="time">12 минут назад</span>
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Робот обновил данные парсинга OZON
+												</span>
+												<span class="time">17 минут назад</span>
+											</div>
+										</a>
+									</div>
+								</li> -->
+								<li>
+									<a class="see-all" href="javascript:void(0);">Смотреть все уведомления<i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="/static/img/14d1689b.png" alt="image profile" width="36" class="img-circle"></a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<li>
+									<div class="user-box">
+										<div class="u-text">
+											<h4>{{ items.login }}</h4>
+											<p class="text-muted">{{ items.email }}</p><a href="/profile/{{ items.user_id }}/" class="btn btn-rounded btn-danger btn-sm">Посмотреть профиль</a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Мой балланс</a>
+									<a class="dropdown-item" href="#">Письма</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Настройки</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Выход</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+		<!-- Sidebar -->
+		<div class="sidebar">
+			<!--
+				Tip 1: You can change the background color of the sidebar using: data-background-color="black | dark | blue | purple | light-blue | green | orange | red"
+				Tip 2: you can also add an image using data-image attribute
+			-->
+			<div class="sidebar-background"></div>
+			<div class="sidebar-wrapper scrollbar-inner">
+				<div class="sidebar-content">
+					<ul class="nav">
+						<li class="nav-item active">
+							<a href="/in/2488982-995/">
+								<i class="flaticon-home"></i>
+								<p>Главная</p>
+								<!-- <span class="badge badge-count">5</span> -->
+							</a>
+						</li>
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="la la-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">Товары</h4>
+							<li class="nav-item">
+								<a data-toggle="collapse" href="#submenu">
+									<i class="flaticon-mailbox"></i>
+									<p>Wildberries</p>
+									<span class="caret"></span>
+								</a>
+								<div class="collapse" id="submenu">
+									<ul class="nav nav-collapse subnav">
+										<li>
+											<a href="/in/{{ items.user_id }}/categories/wildberries/">
+												<span class="sub-item">Категории</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="sub-item">Бренды</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="sub-item">Товары</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a data-toggle="collapse" href="#submenu2">
+									<i class="flaticon-mailbox"></i>
+									<p>Ozon</p>
+									<span class="caret"></span>
+								</a>
+								<div class="collapse" id="submenu2">
+									<ul class="nav nav-collapse subnav">
+										<li>
+											<a href="/in/{{ items.user_id }}/categories/ozon/">
+												<span class="sub-item">Категории</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="sub-item">Бренды</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="sub-item">Товары</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</li>
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="la la-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">Пользователю</h4>
+						</li>
+						<li class="nav-item">
+							<a href="/more/groups/">
+								<i class="flaticon-price-tag"></i>
+								<p>Группы</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/more/calendar/">
+								<i class="flaticon-calendar"></i>
+								<p>Календарь</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/more/widgets/">
+								<i class="flaticon-web"></i>
+								<p>О нас</p>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a href="/main/">
+								<i class="flaticon-price-tag"></i>
+								<p>Тарифы</p>
+								<span class="badge badge-count">3 тарифа</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/more/faqs/">
+								<i class="flaticon-round"></i>
+								<p>FAQs</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+		<div class="main-panel">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="page-header">
+						<h4 class="page-title">По дням {{ magazine }}</h4>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-12">
+                        	<div id="accordion" class="accordion-secondary">
+                        		<div class="card">
+                                    <div class="card-header">
+										<div class="row">
+											<div class="col-sm-6 col-md-3">
+									    		<nav aria-label="breadcrumb">
+                                        			<ol class="breadcrumb">
+                                        				<li class="breadcrumb-item">Компьютеры</li>
+                                        				<li class="breadcrumb-item active" aria-current="page">Ноутбуки</li>
+                                        			</ol>
+                                        		</nav>
+											</div>
+											<div class="col-sm-4 col-md-2">
+												<p class="page-title pt-2">За 3 месяца</p>
+											</div>
+										</div>
+								    </div>
+									<div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+										        <div class="nav flex-column nav-pills nav-secondary nav-pills-no-bd nav-pills-icons" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+													<div class="row">
+														<div class="col-2">
+                                                    		<form method="post">
+                                                    			<input class="nav-link btn" type="submit" name="products" value="Товары" style="width: 100%;">
+															</form>
+														</div>
+														<div class="col-2">
+															<form method="post">
+                                                    			<input class="nav-link btn" type="submit" name="subcat" value="Подкатегории" style="width: 100%;">
+															</form>
+														</div>
+														<div class="col-2">
+                                                    		<form method="post">
+                                                    			<input class="nav-link btn" type="submit" name="brands" value="Бренды" style="width: 100%;">
+															</form>
+														</div>
+														<div class="col-2">
+                                                    		<form method="post">
+                                                    			<input class="nav-link btn" type="submit" name="sellers" value="Продавцы" style="width: 100%;">
+															</form>
+														</div>
+														<div class="col-2">
+                                                    		<form method="post">
+                                                    			<input class="nav-link btn" type="submit" name="trends" value="Тренды" style="width: 100%;">
+															</form>
+														</div>
+														<div class="col-2">
+                                                    		<a class="nav-link active show" id="v-pills-for-day-tab-icons" data-toggle="pill" href="#v-pills-for-day-icons" role="tab" aria-controls="v-pills-for-day-icons" aria-selected="true">
+                                                    		    По дням
+                                                    		</a>
+														</div>
+													</div>
+                                                </div>
+										    </div>
+                                        </div>
+										<div class="col-12">
+											<div class="chart-container">
+												<div class="chartjs-size-monitor" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+													<div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+														<div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+													</div>
+													<div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+														<div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+													</div>
+												</div>
+												<canvas id="multipleLineChart" width="501" height="350" class="chartjs-render-monitor" style="display: block; width: 501px; height: 350px;"></canvas>
+											</div>
+										</div>
+                                        <div class="col-12" style="margin-top: 30px">
+                                            <div class="tab-content" id="v-pills-tabContent">
+                                                <div class="tab-pane fade active show" id="v-pills-for-day-icons" role="tabpanel" aria-labelledby="v-pills-for-day-tab-icons">
+										            <div class="table-responsive">
+										                <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+										                	<div class="row">
+										                		<div class="col-sm-12">
+										                			<table data-page-length='50' id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+										                				<thead>
+										                					<tr role="row">
+										                						<th class="sorting_asc" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 60px;">Рама</th>
+										                						<th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 155px;">Товаров</th>
+										                						<th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 140px;">Выручка</th>
+										                						<th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 70px;">Продаж</th>
+										                						<th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 107px;">Средняя цена</th>
+										                						<th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 120px;">Средняя цена продукта</th>
+                                                                                <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 120px;">Рей</th>
+                                                                                <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 120px;">Комментарии</th>
+										                					</tr>
+										                				</thead>
+										                				<tfoot>
+										                					<tr>
+										                						<th rowspan="1" colspan="1">Фото</th>
+										                						<th rowspan="1" colspan="1">Sku</th>
+										                						<th rowspan="1" colspan="1">Название</th>
+										                						<th rowspan="1" colspan="1">Бренд</th>
+										                						<th rowspan="1" colspan="1">Продавец</th>
+										                						<th rowspan="1" colspan="1">График продаж</th>
+                                                                                <th rowspan="1" colspan="1">График продаж</th>
+                                                                                <th rowspan="1" colspan="1">График продаж</th>
+										                					</tr>
+										                				</tfoot>
+										                				<tbody>
+										                				{% for i in range(len_items) %}
+																		{% if i % 2 == 0 %}
+																		<tr role="row" class="odd">
+																			{% else %}
+																		<tr role="row" class="even">
+																			{% endif %}
+																			<td class="sorting_1">{{ values[i].frame }}</td>
+																			<td>{{ values[i].products }}</td>
+																			<td>{{ values[i].sales }}</td>
+																			<td>{{ values[i].revenue }}</td>
+																			<td>{{ values[i].average_price }}</td>
+																			<td>{{ values[i].average_price_product }}</td>
+                                                                            <td>{{ values[i].rey }}</td>
+                                                                            <td>{{ values[i].comments }}</td>
+																		</tr>
+																		{% endfor %}
+										                				</tbody>
+										                			</table>
+										                		</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+									</div>
+                                </div>
+                        	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Custom template -->
+	</div>
+	<!--   Core JS Files   -->
+	<script src="/static/js/core/jquery.3.2.1.min.js"></script>
+	<script src="/static/js/core/popper.min.js"></script>
+	<script src="/static/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="/static/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="/static/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="/static/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+	<!-- Moment JS -->
+	<script src="/static/js/plugin/moment/moment.min.js"></script>
+
+	<!-- Chart JS -->
+	<script src="/static/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="/static/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="/static/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="/static/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+	<!-- Bootstrap Toggle -->
+	<script src="/static/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="/static/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="/static/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+	<!-- Google Maps Plugin -->
+	<script src="/static/js/plugin/gmaps/gmaps.js"></script>
+
+	<!-- Dropzone -->
+	<script src="/static/js/plugin/dropzone/dropzone.min.js"></script>
+
+	<!-- Fullcalendar -->
+	<script src="/static/js/plugin/fullcalendar/fullcalendar.min.js"></script>
+
+	<!-- DateTimePicker -->
+	<script src="/static/js/plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Bootstrap Tagsinput -->
+	<script src="/static/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+	<!-- Bootstrap Wizard -->
+	<script src="/static/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+	<!-- jQuery Validation -->
+	<script src="/static/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+
+	<!-- Summernote -->
+	<script src="/static/js/plugin/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Select2 -->
+	<script src="/static/js/plugin/select2/select2.full.min.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="/static/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Ready Pro JS -->
+	<script src="/static/js/ready.min.js"></script>
+
+	<!-- Ready Pro DEMO methods, don't include it in your project! -->
+	<script src="/static/js/setting-demo.js"></script>
+	<script src="/static/js/demo.js"></script>
+    <script>
+        multipleLineChart = document.getElementById('multipleLineChart').getContext('2d');
+        var myMultipleLineChart = new Chart(multipleLineChart, {
+			type: 'line',
+			data: {
+				labels: [
+				    "01.01.2020", "02.01.2020", "03.01.2020", "04.01.2020", "05.01.2020", "06.01.2020",
+                    "07.01.2020", "08.01.2020", "09.01.2020", "10.01.2020", "11.01.2020", "12.01.2020",
+                ],
+				datasets: [{
+					label: "Продажи",
+					yAxisID: 'Sellers',
+					borderColor: "#1d7af3",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'rgba(29, 122, 243, 0.1)',
+					fill: true,
+					borderWidth: 2,
+					data: [30, 45, 45, 68, 69, 90, 100, 158, 177, 200, 245, 256]
+				},{
+					label: "Выручка",
+					yAxisID: 'Revenue',
+					borderColor: "#59d05d",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#59d05d",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'rgba(89, 208, 93, 0.1)',
+					fill: true,
+					borderWidth: 2,
+					data: [35, 442, 674, 795, 867, 342, 529, 535, 423, 107, 123, 346]
+				}]
+			},
+			options : {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+		        	yAxes:[{
+		        		id: 'Sellers',
+		        		position: 'left'
+		        	}, {
+		        		id: 'Revenue',
+		        		position: 'right'
+		        	},]
+		        },
+				legend: {
+					position: 'bottom',
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				}
+			}
+		});
+    </script>
+	<script>
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+				initComplete: function () {
+  				    this.api().columns().every( function () {
+  				        var column = this;
+  				        var search = $(`<input class="form-control form-control-sm" type="text" placeholder="Поиск">`)
+  				            .appendTo( $(column.footer()).empty() )
+  				            .on( 'change input', function () {
+  				                var val = $(this).val()
+
+  				                column
+  				                    .search( val ? val : '', true, false )
+  				                    .draw();
+  				            } );
+  				    } );
+  				},
+				"pagingType": "numbers",
+				language: {
+					url: '//cdn.datatables.net/plug-ins/1.10.22/i18n/Russian.json'
+				},
+				"order": [[ 2, "desc" ]]
+			});
+		})
+	</script>
+</body>
+</html>

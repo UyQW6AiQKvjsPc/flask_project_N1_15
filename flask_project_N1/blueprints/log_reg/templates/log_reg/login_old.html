@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <a href="{{ url_for('.register_b') }}" class="float-right btn btn-outline-primary mt-1">Зарегистрироваться</a>
+                    <h4 class="card-title mt-2">Авторизация</h4>
+                </header>
+                <article class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+			            	<!-- alert-danger -->
+			            	{% for cat, msg in get_flashed_messages(True) %}
+			            	<div class="alert {{ cat }}" role="alert">
+			            		{{ msg }}
+			            	</div>
+			            	{% endfor %}
+			            </div>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Логин</label>
+                                <input type="text" class="form-control" placeholder="" name="login">
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Введите пароль</label>
+                                <input class="form-control" type="password" name="psw">
+                            </div>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Войти  </button>
+                        </div> <!-- form-group// -->
+                    </form>
+                </article> <!-- card-body end .// -->
+                <div class="border-top card-body text-center">У вас нет аккаунта? <a href="{{ url_for('.register_b') }}">Регистрация</a></div>
+            </div> <!-- card.// -->
+        </div> <!-- col.//-->
+    </div> <!-- row.//-->
+</div>
+{% endblock %}

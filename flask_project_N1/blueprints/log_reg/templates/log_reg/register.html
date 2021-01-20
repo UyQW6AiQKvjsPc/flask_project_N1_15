@@ -1,0 +1,64 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <a href="{{url_for('.login_b', id=0)}}" class="float-right btn btn-outline-primary mt-1">Войти</a>
+                    <h4 class="card-title mt-2">Регистрация</h4>
+                </header>
+                <article class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+			            	<!-- alert-danger -->
+			            	{% for cat, msg in get_flashed_messages(True) %}
+			            	<div class="alert {{ cat }}" role="alert">
+			            		{{ msg }}
+			            	</div>
+			            	{% endfor %}
+			            </div>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Логин</label>
+                                <input type="text" class="form-control" placeholder="" name="login">
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-group">
+                            <label>Почта</label>
+                            <input type="email" class="form-control" placeholder="" name="email">
+                            <small class="form-text text-muted">Мы гаранитируем сохранность вашей почты</small>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group">
+                            <label>Номер</label>
+                            <input type="text" class="form-control" placeholder="" name="phone">
+                            <small class="form-text text-muted">Мы гаранитируем сохранность вашего номера</small>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Придумайте пароль</label>
+                                <input class="form-control" type="password" name="psw1">
+                                <small class="form-text text-muted">Минимальная длина пароля: 12 символов</small>
+                            </div>
+                            <div class="col form-group">
+                                <label>Повторите пароль</label>
+                                <input class="form-control" type="password" name="psw2">
+                            </div>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Регистрация  </button>
+                        </div> <!-- form-group// -->
+                        <small class="text-muted">Нажав кнопку "Зарегистрироваться", вы принимаете наши условия. <br> Условия использования и Политика конфиденциальности.</small>
+                    </form>
+                </article> <!-- card-body end .// -->
+                <div class="border-top card-body text-center">У вас есть аккаунт? <a href="{{url_for('.login_b', id=0)}}">Войти</a></div>
+            </div> <!-- card.// -->
+        </div> <!-- col.//-->
+    </div> <!-- row.//-->
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block navbar %}
+<header>
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+		<div class="container-fluid">
+            <a href="/main/" class="navbar-brand">
+                <!-- ссылка на логотип -->
+				какой то логотип
+                <img id="img_n" src="" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+			aria-expanded="false">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav mr-auto mb-2">
+					<li class="nav-item">
+						<a href="" class="nav-link">Сводка</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Товары</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Избранное</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Ozon</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Wildberries</a>
+					</li>
+				</ul>
+				<form action="" class="d-flex">
+					<input type="search" placeholder="Поиск" class="form-control mr-2">
+					<a href="/profile/" class="btn btn-outline-warning ml-3" role="bottun">Профиль</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5" style="margin-right: 0">
+    <div class="pb-5 mb-4"></div>
+	<form method="post">
+    	<div class="row gutters">
+    		<div class="col-12 center">
+    	        <div class="form-group">
+    	            <label for="email">Введите почту, на нее придет ссылка, перейдя по которой, вы сможете сбросить пароль</label>
+    	            <input name="email" type="email" class="form-control" id="email" placeholder="Почта" style="max-width: 300px" required>
+    	            <small class="form-text text-muted">Почта может быть любой</small>
+    	        </div>
+    	    </div>
+    	</div>
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-left">
+					<input type="submit" id="submit" name="submit" class="btn btn-primary" value="Отправить">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}
