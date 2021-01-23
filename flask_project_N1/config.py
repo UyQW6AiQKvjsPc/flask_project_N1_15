@@ -5,7 +5,7 @@ class Config(object):
     # Hosting info
     DOMAIN = "ada.atrecon.ru"
 
-    # Create dummy secrety key so we can use sessions
+    # Create dummy secret key to use sessions
     SECRET_KEY = 'dsfgklwer32450345jfs}{DLI*(#)#@*&#*&$@mgdflgkfewro32054348terksdfjskfsndmclsfdi920529&&&*jjfsADSD'
 
     # Set optional bootswatch theme
@@ -18,9 +18,9 @@ class Config(object):
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'olegar2002@gmail.com' # твоя почта
-    MAIL_DEFAULT_SENDER = 'olegar2002@gmail.com'  # твоя почта
-    MAIL_PASSWORD = 'ridmzekimipaqsbh'  # пароль
+    MAIL_USERNAME = 'cookie96112@gmail.com' # поменять на почтовый ящик сайта
+    MAIL_DEFAULT_SENDER = 'cookie96112@gmail.com'  # поменять на почтовый ящик сайта
+    MAIL_PASSWORD = 'Kb1749566000'  # пароль
 
 
 # Конфиг для разработки
