@@ -3,7 +3,7 @@ class Config(object):
     DEBUG = True
 
     # Hosting info
-    DOMAIN = "ada.atrecon.ru"
+    DOMAIN = "ada.atrecon.ru" # название сайта
 
     # Create dummy secret key to use sessions
     SECRET_KEY = 'dsfgklwer32450345jfs}{DLI*(#)#@*&#*&$@mgdflgkfewro32054348terksdfjskfsndmclsfdi920529&&&*jjfsADSD'
